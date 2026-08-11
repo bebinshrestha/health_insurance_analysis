@@ -1,4 +1,4 @@
-## **Medical Insurance Charges** 
+## **Health Insurance Cost Analysis** 
 
 ## Overview  
 This data contains clean and structured insurance data including demographic information, risk factor, smoking status,insurance tier, and insurance charges. The primary objective of this project is to analyze the factors that influence health insurance cossts and understand how variables such as age, BMI, and smoking habits contribute to overall insurance charges. 
@@ -18,12 +18,11 @@ This data contains clean and structured insurance data including demographic inf
 ## Analysis and Visulization     
   - Data cleaing and wrangling    
   - Exploratory Data Analaysis (EDA)  
-  - 
-  - Distribution of gender and insurance charges by gender (pie chart and bar plot)
-  - Age distribution and impact of age on insurance charges (histogram and scatter plot)
+  - Impact of age on insurance charges (scatter plot)
   - Smoking status impact on insurance charges (scatter plot)
-  - Correlation analysis (Head Map)
-  - Impact of BMI and smoking status on insurance charges (bar plot)
+  - Age distribution and impact of age on insurance charges (histogram)
+  - Average insurance charges based by region and smoking status (bar plot)
+
 
 ## Instructions
 1. #### Fork and Clone the Repository
@@ -40,15 +39,36 @@ import numpy as np
 import seaborn as sns 
 import sqlite3
 ```
+
 ```bash
 df = pd.read_csv("data/medical_insurance_2026_kaggle.csv")
 df.head()
 df1 = pd.read_csv("../data/health_insurance_cost_and_risk_dataset.csv")
 df1.head()
 ```
+3. #### Create, Activate, and Deactivate Virtual Environment
+```bash
+python -m venv venv
+source venv/Scrips/activate
+deactivate
+```
+
+4. #### Install Dependencies
+```bash 
+pip install -r requirements.txt
+```
+## Findings
+This analysis identified several patterns in health insurance charges:
+- Insurance charges generally increases with age.
+- Smokers has substantially higher average insurance charges than non-smokers across every region.
+- Overall, smoking status is one of the strongest factor associated with higher insurance charges
 
 ## Author
 Bebin Shrestha - Code:You Student
+
+## AI Assistance
+ChatGPT was used to review and troubleshoot the code when coding error arose and clarify the functions of the codes when needed. 
+
 
 ## License
 Open source under the Creative Commons which states that "you can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission." 
