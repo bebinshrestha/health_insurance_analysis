@@ -1,3 +1,0 @@
-Data/health_insurance.db
-
- filter=lfs diff=lfs merge=lfs -text
