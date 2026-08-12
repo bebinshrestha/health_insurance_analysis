@@ -61,14 +61,15 @@ pip install -r requirements.txt
 
 5. #### Create Database File
 The SQLlite database(../Data/Health_insurance.db) is not included in this repository because of the file size limit.
-The database can be created using the following code:
-
+The database can be created using the following python code:
+```python
 conn = sqlite3.connect('../Data/health_insurance.db')
 conn.execute("PRAGMA foreign_keys = ON")
 regions_df.to_sql('regions', conn, if_exists = 'replace', index=False)
 demographic_df.to_sql('demographic', conn, if_exists = 'replace', index=False)
 policy_df.to_sql('policy', conn, if_exists = 'replace', index=False)
 health_profile_df.to_sql('health_profile', conn, if_exists = 'replace', index=False)
+```
 
 
 ## Findings
