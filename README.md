@@ -46,6 +46,7 @@ df.head()
 df1 = pd.read_csv("../data/health_insurance_cost_and_risk_dataset.csv")
 df1.head()
 ```
+
 3. #### Create, Activate, and Deactivate Virtual Environment
 ```bash
 python -m venv venv
@@ -57,6 +58,19 @@ deactivate
 ```bash 
 pip install -r requirements.txt
 ```
+
+5. #### Create Database File
+The SQLlite database(../Data/Health_insurance.db) is not included in this repository because of the file size limit.
+The database can be created using the following code:
+
+conn = sqlite3.connect('../Data/health_insurance.db')
+conn.execute("PRAGMA foreign_keys = ON")
+regions_df.to_sql('regions', conn, if_exists = 'replace', index=False)
+demographic_df.to_sql('demographic', conn, if_exists = 'replace', index=False)
+policy_df.to_sql('policy', conn, if_exists = 'replace', index=False)
+health_profile_df.to_sql('health_profile', conn, if_exists = 'replace', index=False)
+
+
 ## Findings
 This analysis identified several patterns in health insurance charges:
 - Insurance charges generally increases with age.
